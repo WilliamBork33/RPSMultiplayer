@@ -12,6 +12,21 @@ $(document).ready(function () {
     var audioElement;
     var audioPreference;
 
+    //Initializing Firebase.
+    var config = {
+        apiKey: "",
+        authDomain: "fir-click-counter-7cdb9.firebaseapp.com",
+        databaseURL: "https://fir-click-counter-7cdb9.firebaseio.com",
+        storageBucket: "fir-click-counter-7cdb9.appspot.com"
+      };
+  
+      firebase.initializeApp(config);
+    
+      // Create a variable to reference the database.
+      var database = firebase.database();
+
+
+
     //Get both the user and computer's name and push it to the HTML.
     var userName = prompt("Your name?");
     var computerName = prompt("Computer name?");
