@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RockPapersScissors</title>
+
+    <!-- Linking style sheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
+
+    <!-- Autoplaying song for excitment and nostalgia -->
+    <audio autoplay loop id="myAudio">
+        <source src="assets/mortal_combat-theme.mp3">
+    </audio>
+</head>
+
+<body>
+    <!-- Responsive Content Container -->
+    <div class="container-fluid">
+
+        <!-- Row for game title -->
+        <div class="row">
+            <div id="gametitle" class="col-lg text-center">
+                <h1>Rock - Paper - Scissors</h1>
+            </div>
+        </div>
+    
+        <!-- Row for player character name and stats -->
+        <div class="row">
+            
+            <!-- Column for human player name and stats -->
+            <div class="col-lg text-center">
+                <h3>
+                    <!-- Div for human name to populate -->
+                    <div id="human_name">human_name</div>
+                    <!-- Div for human score -->  
+                    <div id="human_score">0</div>   
+                </h3>
+            </div>
+
+            <!-- Column for ties stats -->
+            <div class="col-lg text-center">
+                <h3>
+                    <!-- Div for ties text -->
+                    <div id="ties">Ties</div>
+                    <!-- Div for ties score -->
+                    <div id="ties_score">0</div>
+                </h3>
+            </div>
+
+            <!-- Column for computer player name and stats -->
+            <div class="col-lg text-center">
+                <h3>
+                    <!-- Div for computer name to populate -->
+                    <div id="computer_name">computer_name</div>
+                    <!-- Div for computer score -->  
+                    <div id="computer_score">0</div>
+                </h3>
+            </div>
+    
+        </div>
+        
+        <!-- Row for the "button section header" -->
+        <div class="row">
+            <div id="warrior_class" class="col-lg text-center">
+                <h2>Choose your warrior class!</h2>
+            </div>
+        </div>
+            
+        <!-- Row for the warrior images and click/touch screen buttons -->
+        <div class="row">
+            <div id="rock" class="col-lg text-center">
+                <br>
+                <!-- Rock image -->
+                <img src="assets/rock.png" height="200px">
+                <br>
+                <!-- Click/touch screen buttons -->
+                <button type="button" class="btn btn-rock" img src="assets/rock.jpg">Rock</button>
+                <p>Strength and power defined.</p>
+            </div>
+            <div id="paper" class="col-lg text-center">
+                <br>
+                <!-- Paper image -->
+                <img src="assets/paper.png" height="200px">
+                <br>
+                <!-- Click/touch screen buttons -->
+                <button type="button" class="btn btn-paper">Paper</button>
+                <p>Fluid flexibility in action.</p>
+            </div>
+            <div id="scissors" class="col-lg text-center">
+                <br>
+                <!-- Scissors image -->
+                <img src="assets/scissors.png" height="200px">
+                <br>
+                <!-- Click/touch screen buttons -->
+                <button type="button" class="btn btn-scissors">Scissors</button>
+                <p>Sharp focus.</p>
+            </div>
+        </div>
+            
+        <!-- Row for footer -->
+        <div class="row">
+            <!-- Column for footer -->
+            <div id="footer" class="col-lg text-center">
+                <!-- Text for creator and social links -->
+                <p2>Creator:</p2>
+                    <!-- Social links -->
+                    <a href="https://twitter.com/williambork" target="_blank" class="icon-twitter">
+                    <i class="fab fa-twitter"></i>
+                    <a href="https://github.com/WilliamBork33" target="_blank" class="icon-github">
+                    <i class="fab fa-github"></i>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Linking to jQuery and Javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript.js"></script>
+</body>
+</html>

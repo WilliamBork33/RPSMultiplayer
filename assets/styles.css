@@ -1,0 +1,84 @@
+body {
+    background-color: olivedrab;
+}
+
+.row {
+    background-color: olivedrab;
+    text-align: center;
+}
+
+#gametitle {
+    color: #007bff;
+    background-color: black;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+#warrior_class {
+    background-color: black;
+    color: #007bff;
+}
+
+#rock {
+    background-color: rgb(161, 61, 30);
+}
+
+#paper {
+    background-color: white;
+}
+
+#scissors {
+    background-color: silver;
+}
+
+.btn-rock, .btn-paper, .btn-scissors {
+    width: 300px;
+    height: 150px;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.btn-rock {
+    background-color: azure;
+    outline-style: groove;
+}
+
+.btn-paper {
+    background-color: azure;
+    outline-style: groove;
+}
+
+.btn-scissors {
+    background-color: azure;
+    outline-style: groove;
+}
+
+p {
+    color:black;
+    font-size: 24px;
+    font-weight: bold; 
+}
+
+.p2 {
+    color: #212529;
+}
+
+#footer {
+    background-color: black;
+    text-align: center;
+}
