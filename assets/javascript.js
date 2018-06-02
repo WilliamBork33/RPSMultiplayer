@@ -12,20 +12,20 @@ $(document).ready(function () {
     var audioElement;
     var audioPreference;
 
-    //Initializing Firebase.
+    //Initialize Firebase
     var config = {
         apiKey: "",
-        authDomain: "fir-click-counter-7cdb9.firebaseapp.com",
-        databaseURL: "https://fir-click-counter-7cdb9.firebaseio.com",
-        storageBucket: "fir-click-counter-7cdb9.appspot.com"
-      };
-  
-      firebase.initializeApp(config);
+        authDomain: "rpsmultiplayer-50afb.firebaseapp.com",
+        databaseURL: "https://rpsmultiplayer-50afb.firebaseio.com",
+        projectId: "rpsmultiplayer-50afb",
+        storageBucket: "rpsmultiplayer-50afb.appspot.com",
+        messagingSenderId: "693127608542"
+    };
+    
+    firebase.initializeApp(config);
     
       // Create a variable to reference the database.
       var database = firebase.database();
-
-
 
     //Get both the user and computer's name and push it to the HTML.
     var userName = prompt("Your name?");
