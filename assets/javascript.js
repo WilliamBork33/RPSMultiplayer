@@ -1,17 +1,5 @@
 $(document).ready(function () {
 
-    //Declaring variables.
-    var computerChoicenumber;
-    var computerChoiceword;
-    var userChoiceword;
-    var userName;
-    var computerName;
-    var tieScore = 0;
-    var userScore = 0;
-    var computerScore = 0;
-    var audioElement;
-    var audioPreference;
-
     //Initialize Firebase
     var config = {
         apiKey: "",
@@ -24,13 +12,50 @@ $(document).ready(function () {
     
     firebase.initializeApp(config);
     
-      // Create a variable to reference the database.
-      var database = firebase.database();
+    // Create a variable to reference the database.
+    var database = firebase.database();
+
+    //Declaring variables.
+    var userName = "";
+    var computerName = "";
+    var userChoiceword = "";
+    var computerChoicenumber = "";
+    var computerChoiceword = "";
+    var userScore = 0;
+    var computerScore = 0;
+    var tieScore = 0;
+    var audioElement;
+    var audioPreference;
 
     //Get both the user and computer's name and push it to the HTML.
     var userName = prompt("Your name?");
     var computerName = prompt("Computer name?");
-    
+
+    //Firebase is always watching for changes to the data.
+    //When changes occurs it will print them to console and html
+    database.ref().on("value", function(snapshot) {
+
+        //Print the initial data to the console.
+        console.log(snapshot.val());
+
+        //Log the value of the various properties
+        console.log("userChoiceword: " + snapshot.val().userChoiceword);
+        console.log("computerChoiceword: " + snapshot.val().computerChoiceword);
+        console.log("userScore: " + snapshot.val().userScore);
+        console.log("computerScore: " + snapshot.val().computerScore);
+        console.log("tieScore: " + snapshot.val().tieScore);
+
+      // Change the HTML
+      //$("#human_name").text(snapshot.val().userName);
+
+      // If any errors are experienced, log them to console.
+    }, function(errorObject) {
+      console.log("The read failed: " + errorObject.code);
+    });
+
+
+
+
     //Prints the name that the user used for themselves and the computer.
     document.getElementById("human_name").innerHTML = userName;
     document.getElementById("computer_name").innerHTML = computerName;
@@ -59,18 +84,45 @@ $(document).ready(function () {
     $(".btn-rock").on("click", function () {
         computerSelection()
         userRock();
+
+        //Referencing the Firebase database.
+        database.ref().set({
+            userChoiceword: userChoiceword,
+            computerChoiceword: computerChoiceword,
+            userScore: userScore,
+            computerScore: computerScore,
+            tieScore: tieScore,
+        });
     });
 
     //OnClick event responds to user click/touch on buttons then runs game logic.
     $(".btn-paper").on("click", function () {
         computerSelection()
         userPaper();
+
+        //Referencing the Firebase database.
+        database.ref().set({
+            userChoiceword: userChoiceword,
+            computerChoiceword: computerChoiceword,
+            userScore: userScore,
+            computerScore: computerScore,
+            tieScore: tieScore,
+        });
     });
 
     //OnClick event responds to user click/touch on buttons then runs game logic.
     $(".btn-scissors").on("click", function () {
         computerSelection()
         userScissors();
+
+        //Referencing the Firebase database.
+        database.ref().set({
+            userChoiceword: userChoiceword,
+            computerChoiceword: computerChoiceword,
+            userScore: userScore,
+            computerScore: computerScore,
+            tieScore: tieScore,
+        });
     });
 
 
