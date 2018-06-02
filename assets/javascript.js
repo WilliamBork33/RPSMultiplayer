@@ -15,9 +15,11 @@ $(document).ready(function () {
     // Create a variable to reference the database.
     var database = firebase.database();
 
+
+
     //Declaring variables.
-    var userName = "";
-    var computerName = "";
+    var userName = "USER";
+    var computerName = "COMPUTER";
     var userChoiceword = "";
     var computerChoicenumber = "";
     var computerChoiceword = "";
@@ -27,9 +29,13 @@ $(document).ready(function () {
     var audioElement;
     var audioPreference;
 
+
+
     //Get both the user and computer's name and push it to the HTML.
-    var userName = prompt("Your name?");
-    var computerName = prompt("Computer name?");
+    var userName = "User" + prompt("Your name?");
+    var computerName = "Computer" + prompt("Computer name?");
+
+
 
     //Firebase is always watching for changes to the data.
     //When changes occurs it will print them to console and html
@@ -39,20 +45,18 @@ $(document).ready(function () {
         console.log(snapshot.val());
 
         //Log the value of the various properties
+        console.log("userName: " + snapshot.val().userName);
+        console.log("computerName: " + snapshot.val().computerName);
         console.log("userChoiceword: " + snapshot.val().userChoiceword);
         console.log("computerChoiceword: " + snapshot.val().computerChoiceword);
         console.log("userScore: " + snapshot.val().userScore);
         console.log("computerScore: " + snapshot.val().computerScore);
         console.log("tieScore: " + snapshot.val().tieScore);
 
-      // Change the HTML
-      //$("#human_name").text(snapshot.val().userName);
-
       // If any errors are experienced, log them to console.
     }, function(errorObject) {
       console.log("The read failed: " + errorObject.code);
     });
-
 
 
 
@@ -80,6 +84,7 @@ $(document).ready(function () {
     }
 
 
+
     //OnClick event responds to user click/touch on buttons then runs game logic.
     $(".btn-rock").on("click", function () {
         computerSelection()
@@ -87,6 +92,8 @@ $(document).ready(function () {
 
         //Referencing the Firebase database.
         database.ref().set({
+            userName: userName,
+            computerName: computerName,
             userChoiceword: userChoiceword,
             computerChoiceword: computerChoiceword,
             userScore: userScore,
@@ -94,6 +101,8 @@ $(document).ready(function () {
             tieScore: tieScore,
         });
     });
+
+
 
     //OnClick event responds to user click/touch on buttons then runs game logic.
     $(".btn-paper").on("click", function () {
@@ -102,7 +111,8 @@ $(document).ready(function () {
 
         //Referencing the Firebase database.
         database.ref().set({
-            userChoiceword: userChoiceword,
+            userName: userName,
+            computerName: computerName,
             computerChoiceword: computerChoiceword,
             userScore: userScore,
             computerScore: computerScore,
@@ -110,6 +120,8 @@ $(document).ready(function () {
         });
     });
 
+
+    
     //OnClick event responds to user click/touch on buttons then runs game logic.
     $(".btn-scissors").on("click", function () {
         computerSelection()
@@ -117,6 +129,8 @@ $(document).ready(function () {
 
         //Referencing the Firebase database.
         database.ref().set({
+            userName: userName,
+            computerName: computerName,
             userChoiceword: userChoiceword,
             computerChoiceword: computerChoiceword,
             userScore: userScore,
@@ -124,6 +138,7 @@ $(document).ready(function () {
             tieScore: tieScore,
         });
     });
+
 
 
     //Function for when user selects "ROCK".
